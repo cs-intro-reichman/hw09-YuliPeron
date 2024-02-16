@@ -40,6 +40,22 @@ public class LanguageModel {
 	// characters in the given list. */
 	public void calculateProbabilities(List probs) {				
 		// Your code goes here
+       int charCaunter = 0;
+        for (int i = 0; i<probs.getSize(); i++)
+        {
+            charCaunter += probs.get(i).count;
+        }
+        double cp = 0.0;
+        for (int i = 0; i<probs.getSize(); i++)
+        {
+            CharData charData = probs.get(i);
+            double p = (double) charData.count/charCaunter;
+            charData.p = p;
+            cp +=p;
+            charData.cp = cp;
+        }
+        return;
+        
 	}
 
     // Returns a random character from the given probabilities list.
