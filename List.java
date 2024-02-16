@@ -104,7 +104,7 @@ public class List {
         // Your code goes here
         Node prev = null;
         Node current = first;
-        while (current!= null && !current.cp.equals(chr))
+        while (current!= null && current.cp.chr != chr)
         {
             prev = current;
             current = current.next;
@@ -113,9 +113,9 @@ public class List {
         {
             return false;
         }
-        if (first == null)
+        if (prev == null)
         {
-            first = first.next;
+            first = current.next;
         }
         else 
         {
