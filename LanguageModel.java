@@ -54,6 +54,7 @@ public class LanguageModel {
             cp +=p;
             charData.cp = cp;
         }
+        return;
         
 	}
 
